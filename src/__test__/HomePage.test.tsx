@@ -6,7 +6,13 @@ describe("Page", () => {
     render(<Page />);
 
     const heading = screen.getByRole("heading", { name: "Docs" });
-
     expect(heading).toBeInTheDocument();
+  });
+
+  it("renders a vercel image", () => {
+    render(<Page />);
+
+    const VercelImage = screen.getByAltText(/Vercel Logo/);
+    expect(VercelImage).toBeInTheDocument();
   });
 });
