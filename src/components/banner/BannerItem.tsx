@@ -60,7 +60,7 @@ export const BannerItem = ({ header }: { header: HeaderTypes[] }) => {
             </h1>
             <p>{item?.description}</p>
             <a href={item?.link} target="_blank" rel="noopener noreferrer">
-              Let's Connect <ArrowRightCircle />
+              {"Let's Connect"} <ArrowRightCircle />
             </a>
           </div>
           <div className="md:col-span-2 col-span-1 ">
