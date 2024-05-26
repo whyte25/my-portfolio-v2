@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { BiMenu, BiSolidContact } from "react-icons/bi";
-import Resume from "/my-resume.pdf";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
