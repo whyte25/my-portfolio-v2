@@ -1,50 +1,49 @@
-"use client";
-import { useEffect, useState } from "react";
-import { BiMenu, BiSolidContact } from "react-icons/bi";
-import Link from "next/link";
+import { useState } from "react";
+
+import { BiChevronLeft } from "react-icons/bi";
+import { MdArrowForwardIos, MdKeyboardArrowDown } from "react-icons/md";
+import Drawer from "../ui/drawer";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
-import { Logo } from "./Logo";
+import Link from "next/link";
 
-function NavBar() {
-  const [activeLink, setActiveLink] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+interface ShowNavProp {
+  showNav: boolean;
+  handleShowNav: () => void;
+  activeLink: boolean;
+  onUpdateActiveLink: (path: string) => void;
+}
+
+const Sidebar = ({
+  handleShowNav,
+  showNav,
+  activeLink,
+  onUpdateActiveLink,
+}: ShowNavProp) => {
   const pathname = usePathname();
-  const [showNav, setShowNav] = useState(false);
-
-  const handleShowNav = () => {
-    setShowNav(!showNav);
-  };
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", onScroll);
-
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  console.log(pathname);
-
-  const onUpdateActiveLink = (path: string) => {
-    const currentRoute = pathname === path ? true : false;
-    setActiveLink(currentRoute);
-  };
 
   return (
-    <nav
-      className={`${scrolled ? "py-5  bg-black z-[999] transition-all duration-500 " : " bg-transparent !bg-none py-7 "} fixed ease-in-out w-full `}
+    <Drawer
+      isDrawerOpen={showNav}
+      closeDrawer={handleShowNav}
+      side="left"
+      hideIcon={true}
+      className="bg-black   2xsm:max-w-sm"
     >
-      <div className=" flex justify-between items-center gap-5 px-5 2xsm:px-10 lg:px-16 2xl:px-16  2xl:max-w-7xl 2xl:mx-auto">
-        <Logo />
-        <BiMenu onClick={handleShowNav} className=" md:hidden" size={25} />
+      <div className="absolute left-4 top-6 flex">
+        <div
+          className="relative rounded-md cursor-pointer flex items-center space-x-2 text-white"
+          onClick={() => handleShowNav()}
+        >
+          <span className="sr-only">Close side bar</span>
+          <BiChevronLeft />
+          <p>Back</p>
+        </div>
+      </div>
 
-        <div className="relative hidden md:flex items-center  gap-5 font-medium text-sm ">
+      <div className="flex h-full mt-10 flex-col overflow-y-scroll bg-body text-white py-6 shadow-xl">
+        <div className="px-4 sm:px-6"></div>
+
+        <nav className="lg:hidden flex pb-5 items-start w-full relative flex-col space-y-10 text-xl font-normal">
           {pathname === "/" ? (
             <>
               <a
@@ -103,14 +102,14 @@ function NavBar() {
           <a
             href={"/my-resume.pdf"}
             download="Fasogba Ifeoluwa - Resume"
-            className="px-3 py-1.5 border-white border resume "
+            className="px-3 py-1.5  border-white border resume "
           >
             <span>My Resume</span>
           </a>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </Drawer>
   );
-}
+};
 
-export default NavBar;
+export default Sidebar;

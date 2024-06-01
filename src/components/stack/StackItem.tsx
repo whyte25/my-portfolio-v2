@@ -14,7 +14,7 @@ export const StackItem = ({
     <div
       //   data-aos="slide-up"
       //   data-aos-delay={delay}
-      className="flex justify-center items-center py-1.5  gap-2 hover:bg-[rgb(255,255,255,0.2)]  transition duration-300 bg-[rgb(255,255,255,0.15)] w-36 2xsm:w-[165px]  sm:w-44  md:w-44  h-fit rounded-full"
+      className="flex justify-center items-center py-1.5  gap-2 hover:bg-[rgb(255,255,255,0.2)]  transition duration-300 bg-[rgb(255,255,255,0.15)] w-36 2xsm:w-[158px]  sm:w-44  md:w-44  h-fit rounded-full"
     >
       <img
         src={urlForImage(item?.imageurl?.asset)}

@@ -20,8 +20,12 @@ const ProjectsComponent = ({ projects }: { projects: Projects[] }) => {
   }, []);
 
   return (
-    pathname === "/" && (
-      <div id="projects" data-aos="slide-up" className="pt-20  ">
+    (pathname === "/" || pathname === "/projects") && (
+      <div
+        id="projects"
+        data-aos="slide-up"
+        className="lg:pt-20  4k:max-w-8xl mx-auto "
+      >
         <div data-aos="slide-up" className="flex items-center  sm:gap-1  gap-3">
           <div className="flex flex-col   gap-1">
             <div className="w-8 bg-white ml-2 h-[2px]" />
@@ -34,7 +38,7 @@ const ProjectsComponent = ({ projects }: { projects: Projects[] }) => {
             <div className="w-3 rounded-full border-2 border-bg-white  h-3" />
           </div>
         </div>
-        <div className="flex flex-col mt-10 gap-5 md:gap-10">
+        <div className="flex flex-col mt-10 gap-5  md:gap-10">
           {pathname === "/"
             ? projectsSlice?.map((project) => (
                 <ProjectCard key={project?._id} project={project} />

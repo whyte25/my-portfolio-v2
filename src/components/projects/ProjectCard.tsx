@@ -8,7 +8,7 @@ export const ProjectCard = ({ project }: { project: Projects }) => {
   return (
     <div
       key={project?._id}
-      className="flex flex-col md:flex-row even:flex-col md:even:flex-row-reverse gap-5 md:gap-10  mt-5 "
+      className="flex flex-col lg:flex-row even:flex-col lg:even:flex-row-reverse gap-5 md:gap-10  mt-5 "
     >
       <div className="flex-1">
         <Image

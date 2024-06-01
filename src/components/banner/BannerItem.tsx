@@ -46,7 +46,7 @@ export const BannerItem = ({ header }: { header: HeaderTypes[] }) => {
 
   return (
     //   padding: 260px 0 100px 0;
-    <div className="md:px-14 px-5 pt-44 md:pt-64 md:pb-24 p-20 ">
+    <div className="md:px-14 lg:px-[105px] px-5 pt-44 md:pt-64 md:pb-24 p-20 ">
       {header?.map((item) => (
         <div
           className="grid md:grid-cols-5 gap-y-5 md:gap-y-0 grid-cols-1"

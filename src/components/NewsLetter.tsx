@@ -4,9 +4,9 @@ export default function NewsLetter() {
   };
 
   return (
-    <div className="lg:px-20 md:px-10 sm:px-5  ">
+    <div className=" md:px-14 lg:px-[105px] px-5 sm:px-5 4k:max-w-8xl mx-auto  ">
       <div className="newsletter-bx    grid md:grid-cols-2 grid-cols-1">
-        <h3>Subscribe to my newsletter</h3>
+        <h3 className="text-base md:text-3xl">Subscribe to my newsletter</h3>
         <div className="">
           <form onSubmit={handleSubmit}>
             <div className="new-email-bx">
