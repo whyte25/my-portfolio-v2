@@ -12,7 +12,10 @@ const About = async () => {
   const projects = await getProjects();
 
   return (
-    <div id="about" className="md:w-5/6 w-[90%] mx-auto pt-16 ">
+    <div
+      id="about"
+      className="md:px-14 lg:px-[105px] px-5 4k:max-w-8xl  mx-auto pt-16 "
+    >
       <div data-data-aos="slide-up" className="flex items-center gap-3">
         <div className="flex flex-col   gap-1">
           <div className="w-8 bg-white ml-2 h-[2px]" />

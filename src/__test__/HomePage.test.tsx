@@ -1,18 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import Page from "../app/page";
+import Page from "../app/(main)/page";
 
 describe("Page", () => {
-  it("renders a heading", () => {
+  it("renders ", () => {
     render(<Page />);
 
-    const heading = screen.getByRole("heading", { name: "Docs" });
+    const heading = screen.getByTestId("home-page");
     expect(heading).toBeInTheDocument();
-  });
-
-  it("renders a vercel image", () => {
-    render(<Page />);
-
-    const VercelImage = screen.getByAltText(/Vercel Logo/);
-    expect(VercelImage).toBeInTheDocument();
   });
 });

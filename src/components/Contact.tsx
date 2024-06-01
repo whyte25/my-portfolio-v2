@@ -44,8 +44,8 @@ export const Contact = () => {
   };
 
   return (
-    <section className="contact md:px-16 px-5" id="contact">
-      <div className="container">
+    <section className="contact   " id="contact">
+      <div className="container  md:px-14 lg:px-[105px] px-5 4k:max-w-8xl mx-auto">
         <div className="items-start grid md:grid-cols-2 grid-cols-1 gap-3 ">
           <div>
             <Image className="w-full" src={ContactImg} alt="" />
