@@ -6,9 +6,10 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Logo } from "../Logo";
 import Sidebar from "./Sidebar";
+import { Path } from "../../../types";
 
 function NavBar() {
-  const [activeLink, setActiveLink] = useState(false);
+  const [activeLink, setActiveLink] = useState<Path["path"]>("/");
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const [showNav, setShowNav] = useState(false);
@@ -30,9 +31,8 @@ function NavBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const onUpdateActiveLink = (path: string) => {
-    const currentRoute = pathname === path ? true : false;
-    setActiveLink(currentRoute);
+  const onUpdateActiveLink = (path: Path["path"]) => {
+    setActiveLink(path);
     setShowNav(false);
   };
 
@@ -50,7 +50,6 @@ function NavBar() {
               <>
                 <a
                   href="#home"
-                  onClick={() => onUpdateActiveLink("")}
                   className={` relative  ${
                     activeLink
                       ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
@@ -61,7 +60,6 @@ function NavBar() {
                 </a>
                 <a
                   href="#about"
-                  onClick={() => onUpdateActiveLink("about")}
                   className={` relative ${
                     activeLink
                       ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
@@ -72,7 +70,6 @@ function NavBar() {
                 </a>
                 <a
                   href="#projects"
-                  onClick={() => onUpdateActiveLink("projects")}
                   className={` relative ${
                     activeLink
                       ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
@@ -83,7 +80,6 @@ function NavBar() {
                 </a>
                 <a
                   href="#contact"
-                  onClick={() => onUpdateActiveLink("contact")}
                   className={` relative ${
                     activeLink
                       ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
@@ -92,13 +88,67 @@ function NavBar() {
                 >
                   Contact
                 </a>
+                <Link onClick={() => onUpdateActiveLink("/blog")} href="/blog">
+                  blog
+                </Link>
               </>
             ) : (
               <>
-                <Link href="/">Home</Link>
-                <Link href="about">About</Link>
-                <Link href="projects">Projects</Link>
-                <Link href="contact">Contact</Link>
+                <Link
+                  onClick={() => onUpdateActiveLink("/")}
+                  className={` relative ${
+                    activeLink === "/"
+                      ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                      : "nav__link"
+                  } `}
+                  href="/"
+                >
+                  Home
+                </Link>
+                <Link
+                  className={` relative ${
+                    activeLink === "/about"
+                      ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                      : "nav__link"
+                  } `}
+                  onClick={() => onUpdateActiveLink("/about")}
+                  href="/about"
+                >
+                  About
+                </Link>
+                <Link
+                  onClick={() => onUpdateActiveLink("/projects")}
+                  className={` relative ${
+                    activeLink === "/projects"
+                      ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                      : "nav__link"
+                  } `}
+                  href="/projects"
+                >
+                  Projects
+                </Link>
+                <Link
+                  onClick={() => onUpdateActiveLink("/contact")}
+                  className={` relative ${
+                    activeLink === "/contact"
+                      ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                      : "nav__link"
+                  } `}
+                  href="/contact"
+                >
+                  Contact
+                </Link>
+                <Link
+                  onClick={() => onUpdateActiveLink("/blog")}
+                  className={` relative ${
+                    activeLink === "/blog"
+                      ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                      : "nav__link"
+                  } `}
+                  href="/blog"
+                >
+                  blog
+                </Link>
               </>
             )}
             <a

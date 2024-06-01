@@ -6,6 +6,7 @@ import {
   ExperienceTypes,
   HeaderTypes,
   Projects,
+  SocialLinks,
   StackTypes,
 } from "../types";
 
@@ -68,6 +69,16 @@ export const getProjects = (): Promise<Projects[]> => {
       stacks,
       links,
       imageurl,
+    }`
+  );
+};
+
+export const getSocialLinks = (): Promise<SocialLinks[]> => {
+  return config.fetch(
+    groq`*[_type == 'socialLinks'] | order(_createdAt asc) {
+      _id,
+      _createdAt,
+      link,
     }`
   );
 };
