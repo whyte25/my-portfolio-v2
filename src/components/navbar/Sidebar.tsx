@@ -5,12 +5,13 @@ import { MdArrowForwardIos, MdKeyboardArrowDown } from "react-icons/md";
 import Drawer from "../ui/drawer";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { Path } from "../../../types";
 
 interface ShowNavProp {
   showNav: boolean;
   handleShowNav: () => void;
-  activeLink: boolean;
-  onUpdateActiveLink: (path: string) => void;
+  activeLink: Path["path"];
+  onUpdateActiveLink: (path: Path["path"]) => void;
 }
 
 const Sidebar = ({
@@ -59,7 +60,7 @@ const Sidebar = ({
               </a>
               <a
                 href="#about"
-                onClick={() => onUpdateActiveLink("about")}
+                onClick={() => onUpdateActiveLink("/about")}
                 className={` relative ${
                   activeLink
                     ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
@@ -70,7 +71,7 @@ const Sidebar = ({
               </a>
               <a
                 href="#projects"
-                onClick={() => onUpdateActiveLink("projects")}
+                onClick={() => onUpdateActiveLink("/projects")}
                 className={` relative ${
                   activeLink
                     ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
@@ -81,7 +82,7 @@ const Sidebar = ({
               </a>
               <a
                 href="#contact"
-                onClick={() => onUpdateActiveLink("contact")}
+                onClick={() => onUpdateActiveLink("/contact")}
                 className={` relative ${
                   activeLink
                     ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
@@ -93,10 +94,61 @@ const Sidebar = ({
             </>
           ) : (
             <>
-              <Link href="/">Home</Link>
-              <Link href="about">About</Link>
-              <Link href="projects">Projects</Link>
-              <Link href="contact">Contact</Link>
+              <Link
+                onClick={() => onUpdateActiveLink("/")}
+                className={` relative ${
+                  activeLink === "/"
+                    ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                    : "nav__link"
+                } `}
+                href="/"
+              >
+                Home
+              </Link>
+              <Link
+                className={` relative ${
+                  activeLink === "/about"
+                    ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                    : "nav__link"
+                } `}
+                onClick={() => onUpdateActiveLink("/about")}
+                href="/about"
+              >
+                About
+              </Link>
+              <Link
+                onClick={() => onUpdateActiveLink("/projects")}
+                className={` relative ${
+                  activeLink === "/projects"
+                    ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                    : "nav__link"
+                } `}
+                href="/projects"
+              >
+                Projects
+              </Link>
+              <Link
+                onClick={() => onUpdateActiveLink("/contact")}
+                className={` relative ${
+                  activeLink === "/contact"
+                    ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                    : "nav__link"
+                } `}
+                href="/contact"
+              >
+                Contact
+              </Link>
+              <Link
+                onClick={() => onUpdateActiveLink("/blog")}
+                className={` relative ${
+                  activeLink === "/blog"
+                    ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
+                    : "nav__link"
+                } `}
+                href="/blog"
+              >
+                blog
+              </Link>
             </>
           )}
           <a

@@ -64,3 +64,12 @@ interface Projects {
   stacks: StackItem[];
   links: Link[];
 }
+
+interface SocialLinks {
+  _id: string;
+  link: string;
+}
+
+interface Path {
+  path: "/" | "/about" | "/contact" | "/projects" | "/blog";
+}
