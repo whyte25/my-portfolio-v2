@@ -64,14 +64,6 @@ export default {
               title: "Href",
               type: "string",
             },
-            {
-              name: "imageurl",
-              title: "ImageURL",
-              type: "image",
-              options: {
-                hotspot: true,
-              },
-            },
           ],
         },
       ],

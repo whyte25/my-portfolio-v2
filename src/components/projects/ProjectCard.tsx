@@ -37,11 +37,6 @@ export const ProjectCard = ({ project }: { project: Projects }) => {
               target="_black"
             >
               <p className="text-[14px] animate-pulse">{link?.website}</p>
-              <img
-                src={urlForImage(link?.imageurl?.asset)}
-                alt=""
-                className="w-fit h-4"
-              />
             </a>
           ))}
         </div>
