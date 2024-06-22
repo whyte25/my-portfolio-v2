@@ -51,7 +51,7 @@ function NavBar() {
                 <a
                   href="#home"
                   className={` relative  ${
-                    activeLink
+                    activeLink === "#home"
                       ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
                       : "nav__link"
                   } `}
@@ -61,7 +61,7 @@ function NavBar() {
                 <a
                   href="#about"
                   className={` relative ${
-                    activeLink
+                    activeLink === "#about"
                       ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
                       : "nav__link"
                   } `}
@@ -71,7 +71,7 @@ function NavBar() {
                 <a
                   href="#projects"
                   className={` relative ${
-                    activeLink
+                    activeLink === "#projects"
                       ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
                       : "nav__link"
                   } `}
@@ -81,7 +81,7 @@ function NavBar() {
                 <a
                   href="#contact"
                   className={` relative ${
-                    activeLink
+                    activeLink === "#contact"
                       ? "before:absolute before:bottom-0 before:bg-white before:h-[1.5px] before:w-full capitalize"
                       : "nav__link"
                   } `}

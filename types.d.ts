@@ -71,5 +71,14 @@ interface SocialLinks {
 }
 
 interface Path {
-  path: "/" | "/about" | "/contact" | "/projects" | "/blog";
+  path:
+    | "#home"
+    | "#about"
+    | "#contact"
+    | "#projects"
+    | "/"
+    | "/about"
+    | "/contact"
+    | "/projects"
+    | "/blog";
 }
