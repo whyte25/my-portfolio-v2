@@ -1,6 +1,5 @@
 import ProjectsComponent from "@/components/projects/ProjectsComponent";
-import React from "react";
-import { getProjects } from "../../../../sanity/sanity-utils";
+import { getProjects } from "@/sanity/sanity-utils";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../globals.css";
-import { siteConfig } from "@/constant/site";
-import NavBar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
+import NavBar from "@/components/navbar/Navbar";
 import { AppProvider } from "@/components/provider/AppProvider";
 import { SocialLinks } from "@/components/SocialLinks/SocialLinks";
+import { siteConfig } from "@/constant/site";
+import "@/styles/globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,7 +48,6 @@ export const metadata: Metadata = {
     creator: `@${siteConfig.name.toLocaleLowerCase()}`,
   },
   icons: {
-    icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
