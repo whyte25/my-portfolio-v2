@@ -1,8 +1,4 @@
-import { siteConfig } from "@/constant/site";
-import React from "react";
-import { FaGithub } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa6";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { FiInstagram } from "react-icons/fi";
 import { getSocialLinks } from "../../../sanity/sanity-utils";
 

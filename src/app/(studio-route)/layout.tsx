@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../globals.css";
 import { siteConfig } from "@/constant/site";
+import "@/styles/globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: `@${siteConfig.name.toLocaleLowerCase()}`,
+    creator: `@${siteConfig.name.toLocaleLowerCase().replace(" ", "")}`,
   },
   icons: {
     icon: "/favicon.ico",

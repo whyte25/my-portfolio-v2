@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Fas Ifeoluwa Portfolio",
+  name: "Fas Ifeoluwa",
   url: "https://fasifeoluwa.netlify.app",
   ogImage: "https://ik.imagekit.io/ltrteacsu/my-portfolio-og.jpeg?tr=w-2000",
   description:

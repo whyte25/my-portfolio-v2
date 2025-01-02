@@ -1,9 +1,8 @@
 "use client";
-import { usePathname } from "next/navigation";
-import React, { useEffect, useRef, useState } from "react";
-import { urlForImage } from "../../../sanity/lib/image";
-import { Projects } from "../../../types";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { Projects } from "../../../types";
 import { ProjectCard } from "./ProjectCard";
 
 const ProjectsComponent = ({ projects }: { projects: Projects[] }) => {
@@ -21,11 +20,7 @@ const ProjectsComponent = ({ projects }: { projects: Projects[] }) => {
 
   return (
     (pathname === "/" || pathname === "/projects") && (
-      <div
-        id="projects"
-        data-aos="slide-up"
-        className="lg:pt-20  4k:max-w-8xl mx-auto "
-      >
+      <div id="projects" className="lg:pt-20  4k:max-w-8xl mx-auto ">
         <div data-aos="slide-up" className="flex items-center  sm:gap-1  gap-3">
           <div className="flex flex-col   gap-1">
             <div className="w-8 bg-white ml-2 h-[2px]" />
