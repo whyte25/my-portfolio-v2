@@ -1,12 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
-import { BiMenu, BiSolidContact } from "react-icons/bi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { useEffect, useState } from "react";
+import { BiMenu } from "react-icons/bi";
+import { Path } from "../../../types";
 import { Logo } from "../Logo";
 import Sidebar from "./Sidebar";
-import { Path } from "../../../types";
 
 function NavBar() {
   const [activeLink, setActiveLink] = useState<Path["path"]>("/");
@@ -152,8 +151,8 @@ function NavBar() {
               </>
             )}
             <a
-              href={"/my-resume.pdf"}
-              download="Fasogba Ifeoluwa - Resume"
+              href={"/ifeoluwa-resume.pdf"}
+              target="_blank"
               className="px-3 py-1.5  border-white border resume "
             >
               <span>My Resume</span>
