@@ -1,11 +1,8 @@
-import { useState } from "react";
-
-import { BiChevronLeft } from "react-icons/bi";
-import { MdArrowForwardIos, MdKeyboardArrowDown } from "react-icons/md";
-import Drawer from "../ui/drawer";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { BiChevronLeft } from "react-icons/bi";
 import { Path } from "../../../types";
+import Drawer from "../ui/drawer";
 
 interface ShowNavProp {
   showNav: boolean;
@@ -148,7 +145,7 @@ const Sidebar = ({
             </>
           )}
           <a
-            href={"/my-resume.pdf"}
+            href={"/ifeoluwa-resume.pdf"}
             download="Fasogba Ifeoluwa - Resume"
             className="px-3 py-1.5  border-white border resume "
           >
