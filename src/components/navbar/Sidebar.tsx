@@ -146,7 +146,7 @@ const Sidebar = ({
           )}
           <a
             href={"/ifeoluwa-resume.pdf"}
-            download="Fasogba Ifeoluwa - Resume"
+            target="_blank"
             className="px-3 py-1.5  border-white border resume "
           >
             <span>My Resume</span>
